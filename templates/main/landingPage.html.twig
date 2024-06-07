@@ -1,0 +1,100 @@
+{# templates/landingPage.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}REBS Travel Buddy{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        #gif-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+            background-image: url('{{ asset('clip.gif') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .content-wrapper {
+            position: relative; 
+            z-index: 1;
+            padding: 20px; 
+        }
+
+        /* Fixed footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333; 
+            color: #fff; 
+            padding: 10px 20px; 
+            text-align: center;
+        }
+
+        .gallery-section {
+            position: relative;
+        }
+
+        .discover-more {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 2; /* Ensure it's above the image */
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <style>
+        .navbar {
+            display: none; 
+        }
+    .qr-code img {
+            width: 150px; 
+            height: auto; 
+        }
+    .qr-code h2 {
+            color: #D2DE32; /* Set text color to lime green */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* Add shadow effect */
+        }
+
+    </style>
+
+    <div class="content-wrapper">
+        <div id="gif-background"></div>
+
+        <div class="gallery-section">
+            <div class="gallery">
+                <img src="{{ asset('images/img43.jpg') }}" alt="Gallery Image 1" class="big">
+                <img src="{{ asset('images/img40.jpg') }}" alt="Gallery Image 7" class="big">
+                <div class="discover-more">
+                    <a href="{{ path('choose_plan') }}" style="color: #D2DE32; text-decoration: none;">Discover more</a>
+                </div>
+                <img src="{{ asset('images/test1.jpeg') }}" alt="Gallery Image 8" class="big">
+            </div>
+        </div>
+
+        <!-- REBS team QR Code  -->
+        <div class="qr-code">
+            <h2>Scan to Visit Our Team Website</h2>
+            <img src="{{ asset('images/REBS_QR.png') }}" alt="QR Code">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 REBS Travel Buddy. All rights reserved.</p>
+    </footer>
+{% endblock %}

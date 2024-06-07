@@ -1,0 +1,37 @@
+{# templates/main/card.html.twig #}
+
+<div class="card shadow-sm mb-4 border-0">
+    {% if title is defined %}
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">{{ title }}</h5>
+        </div>
+    {% endif %}
+    <div class="card-body">
+        <div class="card-content">
+            {% if content is defined %}
+                {{ content|raw }}
+            {% else %}
+                <p>No content available.</p>
+            {% endif %}
+        </div>
+    </div>
+    {% if footer is defined %}
+        <div class="card-footer bg-light text-muted">
+            <small>{{ footer }}</small>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .card-content {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .card-footer {
+        text-align: right;
+    }
+</style>

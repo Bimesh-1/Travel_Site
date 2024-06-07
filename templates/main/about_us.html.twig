@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}About Us
+{% endblock %}
+
+
+{% block body %}
+	<style>
+		body {
+			background-image: url('{{ asset('about.gif') }}');
+			background-repeat: no-repeat;
+			background-size: cover;
+	}
+        .content-wrapper {
+            background-color: darkgray;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 10px 20px rgba(0, 0, 0, 1);
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .content-wrapper h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .content-wrapper p {
+            color: black;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>About Us</h1>
+        <p>Welcome to REBS Travel Buddy! We're four friends—Randolph, Elias, Bimesh, and Shaheed—who turned our shared love for travel into something special. The acronym REBS, representing Routes, Exploration, and Best Solutions, comes from the first letters of each of our names.</p>
+        <p>The aim of our platform simplifies trip planning with essential itineraries and weather forecasts.</p>
+        <p>Built on the Symfony framework with Twig templates and CSS styling, our site's original aim was a seamless, visually appealing experience. Due to time constraints, we've been unable to add many features originally intended for our web application.</p>
+        <p>Some of our ideas balanced around the concept of making trip planning a seamless experience, with features such as travel suggestions, itinerary planning, and easy access to transportation costs and routes.</p>
+        <p>We hope to add these features and more in the near future, all of it with the aim of pushing each other to improve our web development skills.</p>
+        <p>Thank you for taking the time to visit our REBS Travel Buddy!</p>
+    </div>
+</body>
+</html>
+
+	{% endblock %}
